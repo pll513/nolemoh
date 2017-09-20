@@ -15,3 +15,4 @@
 {% endif %}
 
 <link rel="stylesheet" type="text/css" href="{{ url_for('css/style.css') }}?v={{ theme.version }}">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">

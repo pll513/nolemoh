@@ -38,7 +38,7 @@
                 {% if excerpt %}
                     {{ excerpt }}
                     <div class="read-more">
-                        <a href="{{ url_for(post.path) }}" class="read-more-link">{{ __('posts.readmore') }}</a>
+                        <a href="{{ url_for(post.path) }}" class="read-more-link">{{ __('posts.read_more') }}</a>
                     </div>
                 {% else %}
                     {{ post.content }}
@@ -56,19 +56,19 @@
         {#{% include "../_partial/_post/reward.swig" %}#}
         {#{% endif %}#}
 
-        {#{% if not is_home() %}#}
-        {#<footer class="post-footer">#}
-        {#{% if post.tags and post.tags.length %}#}
-        {#<div class="post-tags">#}
-        {#{% for tag in post.tags %}#}
-        {#<a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>#}
-        {#{% endfor %}#}
-        {#</div>#}
-        {#{% endif %}#}
-        {# Post Pagination #}
-        {#{% include "../_partial/pagination.swig" %}#}
-        {#</footer>#}
-        {#{% endif %}#}
+        {% if not is_home() %}
+            <footer class="post-footer">
+                {% if post.tags and post.tags.length %}
+                    <div class="post-tags">
+                        {% for tag in post.tags %}
+                            <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {# Post Pagination #}
+                {% include "../pagination.swig" %}
+            </footer>
+        {% endif %}
 
     </article>
 {% endmacro %}

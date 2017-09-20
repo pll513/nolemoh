@@ -2,6 +2,9 @@
 title: new post
 date: 2017-09-08 00:15:53
 tags:
+- python
+- 数学
+- AI
 ---
 
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
@@ -13,10 +16,8 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 ``` bash
 $ hexo new "My New Post"
 ```
-
+<!--more-->
 More info: [Writing](https://hexo.io/docs/writing.html)
-
-测试数学公式 块
 
 测试一下Python代码
 
@@ -24,7 +25,6 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 #coding:utf-8
 from selenium import webdriver
 import time
-
 browser = webdriver.Chrome() #浏览器
 kch = "311084030"   #想要选择的课程号
 kxh = "01"            #想要选择的课序号

@@ -1,6 +1,10 @@
-menu:
-  Home: /
-  Archives: /archives/
+nav:
+  home: /
+  archives: /archives
   # Tags: /tags
   # Categories: /categories
-  # About: /about
+  about: /about
+
+customize:
+  highlight: tomorrow-night
+
