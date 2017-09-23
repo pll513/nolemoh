@@ -1,6 +1,8 @@
 ---
 title: new post
 date: 2017-09-08 00:15:53
+categories:
+- programming
 tags:
 - python
 - 数学

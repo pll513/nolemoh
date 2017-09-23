@@ -3,23 +3,28 @@
         <header class="post-header">
             <h1 class="post-title">
                 {% if is_home() %}
-                    <a class="post-link" href="{{ url_for(post.path) }}">{{ post.title }}</a>
+                    <a class="post-link" href="{{ url_for(post.path) }}"
+                       data-hover="{{ post.title }}">{{ post.title }}</a>
                 {% else %}
                     {{ post.title }}
                 {% endif %}
             </h1>
 
             <div class="post-meta">
-        <span class="post-time">
-          {{ full_date(post.date, 'YYYY-MM-DD') }}
-        </span>
+                {% set category = '' %}
+                {% set url = '' %}
                 {% if post.categories and post.categories.length %}
-                    <div class="post-category">
-                        {% for category in post.categories %}
-                            <a href="{{ url_for(category.path) }}">{{ category.name }}</a>
-                        {% endfor %}
-                    </div>
+                    {% for c in post.categories %}
+                        {% set category = category + __('categories.' + c.name) + '/' %}
+                        {% set url = url_for(c.path) %}
+                    {% endfor %}
+                    {% set category = category.slice(0, -1) %}
                 {% endif %}
+                <i class="iconfont icon-calendar"></i>
+                <span>{{ full_date(post.date, 'MMM DD, YYYY') }}</span>
+                <span class="mh2">|</span>
+                <i class="iconfont icon-folder"></i>
+                <a href="{{ url }}">{{ category }}</a>
             </div>
         </header>
 

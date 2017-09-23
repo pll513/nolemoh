@@ -1,0 +1,93 @@
+@import "../_variables.styl"
+
+.post
+  padding 12px 0 24px
+  font-family Athelas, STHeiti, "Microsoft Yahei", serif
+  &:before
+  &:after
+    content ''
+    display table
+  &:after
+    clear both
+
+.post + .post
+  border-top: 1px solid #ddd
+
+.post-title
+  margin 0
+  font-weight 400
+
+.post-link
+  position relative
+  display inline-block
+  height 40px
+  line-height 40px
+  font-size 28px
+  color $color-highlight
+  &:focus
+  &:hover
+    &:after
+      max-width 100%
+  &:after
+    position absolute
+    top 0
+    left 0
+    height 100%
+    overflow hidden
+    max-width 0
+    border-bottom 2px solid $color-theme
+    color: $color-theme
+    content attr(data-hover)
+    -webkit-transition: max-width 0.5s
+    -moz-transition: max-width 0.5s
+    -ms-transition: max-width 0.5s
+    -o-transition: max-width 0.5s
+    transition: max-width 0.5s
+
+.post-content
+  color $color-text
+
+.post-meta
+  margin 2px 0 0
+  line-height 24px
+  font-size 15px
+  color $color-light
+  font-family STHeiti, "Microsoft Yahei", "Source Sans Pro", "Helvetica Neue", Arial, serif
+
+.posts
+  border-bottom 1px solid #ddd
+  p
+    text-align justify
+    -ms-text-justify distribute
+    text-justify distribute
+
+.post .post-content
+  code, pre
+    font-size 15px
+    font-family Consolas, Monaco, Menlo, Consolas, monospace
+
+
+.read-more
+  float left
+  height 22px
+  &:hover
+    border-bottom 1px solid $color-theme
+
+.read-more-link
+  line-height 22px
+  text-decoration none
+
+  color $color-theme
+
+.post-meta
+  font-size 14px
+  height 18px
+  line-height 18px
+  vertical-align: baseline
+  a
+    &:hover
+      color #454545
+  //*
+  //  display inline-block
+  //  height 18px
+  //  line-height 18px

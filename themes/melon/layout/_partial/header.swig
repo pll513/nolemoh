@@ -1,7 +1,7 @@
 {% macro render(current_page) %}
 <header class="header">
     <div class="logo-wrap">
-        <a class="logo">NOLEMOH</a>
+        <a class="logo" href="/">NOLEMOH</a>
     </div>
     <button class="navbar-toggle">
         <span class="icon-bar"></span>

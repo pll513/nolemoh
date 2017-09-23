@@ -1,5 +1,8 @@
 ---
 title: Hello World
+categories:
+- amusement
+- games
 tags:
 - 娱乐
 
