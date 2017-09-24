@@ -15,7 +15,7 @@
                 {% set url = '' %}
                 {% if post.categories and post.categories.length %}
                     {% for c in post.categories %}
-                        {% set category = category + __('categories.' + c.name) + '/' %}
+                        {% set category = category + __('categories.' + c.name.toLowerCase()) + '/' %}
                         {% set url = url_for(c.path) %}
                     {% endfor %}
                     {% set category = category.slice(0, -1) %}
@@ -31,7 +31,7 @@
         {# Post TOC #}
         {#{% include "../_partial/_post/toc.swig" %}#}
 
-        <div class="post-content">
+        <div class="post-content clearfix">
             {% if is_home() %}
                 {% set excerpt = "" %}
                 {% if post.description %}
@@ -39,12 +39,8 @@
                     {% elif post.excerpt %}
                     {% set excerpt = post.excerpt %}
                 {% endif %}
-
                 {% if excerpt %}
                     {{ excerpt }}
-                    <div class="read-more">
-                        <a href="{{ url_for(post.path) }}" class="read-more-link">{{ __('posts.read_more') }}</a>
-                    </div>
                 {% else %}
                     {{ post.content }}
                 {% endif %}
@@ -60,20 +56,39 @@
         {# Reward #}
         {#{% include "../_partial/_post/reward.swig" %}#}
         {#{% endif %}#}
-
-        {% if not is_home() %}
+        {% if is_home() %}
             <footer class="post-footer">
                 {% if post.tags and post.tags.length %}
                     <div class="post-tags">
                         {% for tag in post.tags %}
-                            <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
+                            <a class="post-tag mr2" href="{{ url_for(tag.path) }}">
+                                <i class="iconfont icon-attachment"></i>
+                                <span>{{ __('tags.' + tag.name.toLowerCase()) }}</span>
+                            </a>
                         {% endfor %}
                     </div>
                 {% endif %}
-                {# Post Pagination #}
-                {% include "../pagination.swig" %}
+                <div class="read-more mt1">
+                    <a href="{{ url_for(post.path) }}" class="read-more_link">{{ __('posts.read_more') }}</a>
+                </div>
+            </footer>
+        {% else %}
+            <footer class="post-footer">
+                {% if post.tags and post.tags.length %}
+                    <div class="post-tags">
+                        {% for tag in post.tags %}
+                            <a class="post-tag mr2" href="{{ url_for(tag.path) }}">
+                                <i class="iconfont icon-attachment"></i>
+                                <span>{{ __('tags.' + tag.name.toLowerCase()) }}</span>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </footer>
         {% endif %}
 
     </article>
+    {% if not is_home() %}
+        {% include "../pagination.swig" %}
+    {% endif %}
 {% endmacro %}

@@ -5,7 +5,7 @@ categories:
 - japanese
 tags:
 - python
-- C++
+- c++
 ---
 
 By default, Hexo uses the post title as its filename. You can edit the new_post_name setting in _config.yml to change the default filename. For example, :year-:month-:day-:title.md will prefix filenames with the post creation date. You can use the following placeholders:

@@ -3,21 +3,17 @@
 .navbar-toggle
   display none
 
-@media (max-width: 767px)
-  .navbar-toggle
-    display block
-
 .header
   padding 24px 0
   height 100px
 
-  .logo-wrap
+  .logo
     float left
     margin 0
-  .logo
+  .logo_link
     font-size 44px
     color $color-theme
-    font-family Raleway
+    font-family "Raleway"
   .nav
     float right
     padding 10px 0 5px
@@ -40,7 +36,7 @@
       left 0
       width 100%
       height 1px
-      content ''
+      content ""
       background $color-theme
       -webkit-transition top 0.3s
       -moz-transition top 0.3s
@@ -53,7 +49,7 @@
       left 0
       width 1px
       height 1px
-      content ''
+      content ""
       background $color-theme
       -webkit-transition height 0.3s
       -moz-transition height 0.3s
@@ -64,4 +60,29 @@
       top 100%
     &:hover:after, &.active:after
       height 100%
+
+@media (max-width: 767px)
+  .header
+    padding 10px
+    height 60px
+    .nav
+      display none
+
+  .navbar-toggle
+    float left
+    display block
+    border none
+    padding 4px 2px
+    width 40px
+    height 30px
+    background none
+
+  .icon-bar
+    display block
+    width 36px
+    height 1px
+    background $color-theme
+
+  & + .icon-bar
+    margin-top 14px
 

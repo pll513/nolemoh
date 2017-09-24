@@ -1,5 +1,19 @@
 @import "../_variables.styl"
 
+
+.posts
+  border-bottom 1px solid #ddd
+  p
+    text-align justify
+    -ms-text-justify distribute
+    text-justify distribute
+
+.post .post-content
+  code, pre
+    font-size 15px
+    font-family Consolas, Monaco, Menlo, Consolas, monospace
+
+
 .post
   padding 12px 0 24px
   font-family Athelas, STHeiti, "Microsoft Yahei", serif
@@ -9,13 +23,14 @@
     display table
   &:after
     clear both
+  & + .post
+    border-top: 1px solid #ddd
 
-.post + .post
-  border-top: 1px solid #ddd
 
 .post-title
   margin 0
   font-weight 400
+
 
 .post-link
   position relative
@@ -44,50 +59,55 @@
     -o-transition: max-width 0.5s
     transition: max-width 0.5s
 
+
 .post-content
   color $color-text
 
+
 .post-meta
   margin 2px 0 0
-  line-height 24px
-  font-size 15px
+  height 18px
+  line-height 18px
+  vertical-align: baseline
+  font-size 14px
   color $color-light
   font-family STHeiti, "Microsoft Yahei", "Source Sans Pro", "Helvetica Neue", Arial, serif
+  .iconfont
+    font-size 14px
+  a
+    &:hover
+      color #454545
 
-.posts
-  border-bottom 1px solid #ddd
-  p
-    text-align justify
-    -ms-text-justify distribute
-    text-justify distribute
 
-.post .post-content
-  code, pre
+.post-tag
+  float left
+  color $color-light
+  font-size 15px
+  &:hover
+    color #454545
+  .iconfont
     font-size 15px
-    font-family Consolas, Monaco, Menlo, Consolas, monospace
 
 
 .read-more
   float left
+  clear left
   height 22px
   &:hover
     border-bottom 1px solid $color-theme
 
-.read-more-link
+
+.read-more_link
   line-height 22px
   text-decoration none
 
   color $color-theme
 
-.post-meta
-  font-size 14px
-  height 18px
-  line-height 18px
-  vertical-align: baseline
-  a
-    &:hover
-      color #454545
-  //*
-  //  display inline-block
-  //  height 18px
-  //  line-height 18px
+
+.post-footer
+  &:before
+  &:after
+    content ''
+    display table
+  &:after
+    clear both

@@ -12,7 +12,7 @@
         {% elif page.archive %}
             <div class="archive-title">
                 <span class="archive-post-counter">
-                {{ _p("counter.archives", site.posts.length) }}
+                    {{ _p("counter.archives", site.posts.length) }}
                 </span>
             </div>
         {% endif %}

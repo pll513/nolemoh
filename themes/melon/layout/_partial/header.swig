@@ -1,13 +1,12 @@
 {% macro render(current_page) %}
 <header class="header">
-    <div class="logo-wrap">
-        <a class="logo" href="/">NOLEMOH</a>
-    </div>
     <button class="navbar-toggle">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
     </button>
+    <div class="logo">
+        <a class="logo_link" href="/">NOLEMOH</a>
+    </div>
     <nav class="nav">
         <a class="nav-link" href="#">搜索</a>
         {% for name, path in theme.nav %}

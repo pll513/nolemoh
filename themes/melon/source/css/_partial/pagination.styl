@@ -4,12 +4,33 @@
   margin 20px 0
 
 .pg-link
-  font-family "Raleway Webfont", Athelas, STHeiti, "Microsoft Yahei", serif
-  color $color-highlight
-.pg-link.prev
-  float left
-.pg-link.next
-  float right
-
-.pg-link_txt
+  height 22px
+  line-height 22px
+  font-family Athelas, STHeiti, "Microsoft Yahei", serif
   font-size 20px
+  color $color-highlight
+  -webkit-transition: transform 0.3s ease-out
+  -moz-transition: transform 0.3s ease-out
+  -ms-transition: transform 0.3s ease-out
+  -o-transition: transform 0.3s ease-out
+  transition: transform 0.3s ease-out
+  .iconfont
+    font-size 20px
+
+.pg-link.fll
+  float left
+  &:hover
+    -webkit-transform: translateX(-8px)
+    -moz-transform: translateX(-8px)
+    -ms-transform: translateX(-8px)
+    -o-transform: translateX(-8px)
+    transform: translateX(-8px)
+
+.pg-link.flr
+  float right
+  &:hover
+    -webkit-transform: translateX(8px)
+    -moz-transform: translateX(8px)
+    -ms-transform: translateX(8px)
+    -o-transform: translateX(8px)
+    transform: translateX(8px)
