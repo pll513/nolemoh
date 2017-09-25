@@ -1,31 +1,46 @@
 {% macro render(current_page) %}
-<header class="header">
-    <button class="navbar-toggle">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    <div class="logo">
-        <a class="logo_link" href="/">NOLEMOH</a>
-    </div>
-    <nav class="nav">
-        <a class="nav-link" href="#">搜索</a>
-        {% for name, path in theme.nav %}
-            {% if name === current_page %}
-                {% set link_class = 'nav-link active' %}
-            {% else %}
-                {% set link_class = 'nav-link' %}
-            {% endif %}
-            <div style="display: none;">{{ name }}</div>
-            <div style="display: none;">{{ current_page }}</div>
-            <a class="{{ link_class }}" href="{{ url_for(path) }}" data-name="{{ name }}">
-                {% set itemName = __('nav.' + name.toLowerCase()) %}
-                {% if itemName.startsWith('nav') %}
-                    {{ name }}
+    <header class="header">
+        <div class="logo">
+            <a class="logo_link" href="/">NOLEMOH</a>
+        </div>
+        <nav class="nav">
+            <a class="nav_link" href="#">搜索</a>
+            {% for name, path in theme.nav %}
+                {% if name === current_page %}
+                    {% set link_class = 'nav_link active' %}
                 {% else %}
-                    {{ itemName }}
+                    {% set link_class = 'nav_link' %}
                 {% endif %}
-            </a>
-        {% endfor %}
-    </nav>
-</header>
+                <a class="{{ link_class }}" href="{{ url_for(path) }}">
+                    {% set itemName = __('nav.' + name.toLowerCase()) %}
+                    {% if itemName.startsWith('nav') %}
+                        {{ name }}
+                    {% else %}
+                        {{ itemName }}
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </nav>
+    </header>
+    <header class="header-mobile">
+        <button class="navbar-toggle" id="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="logo">
+            <a class="logo_link" href="/">NOLEMOH</a>
+        </div>
+        <nav class="nav none" id="mobile-nav">
+            {% for name, path in theme.nav %}
+                <a class="nav_link" href="{{ url_for(path) }}">
+                    {% set itemName = __('nav.' + name.toLowerCase()) %}
+                    {% if itemName.startsWith('nav') %}
+                        {{ name }}
+                    {% else %}
+                        {{ itemName }}
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </nav>
+    </header>
 {% endmacro %}

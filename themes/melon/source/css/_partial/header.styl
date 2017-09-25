@@ -1,7 +1,8 @@
 @import "../_variables.styl"
 
-.navbar-toggle
-  display none
+.logo_link
+  color $color-theme
+  font-family "Raleway", serif
 
 .header
   padding 24px 0
@@ -10,16 +11,16 @@
   .logo
     float left
     margin 0
+
   .logo_link
     font-size 44px
-    color $color-theme
-    font-family "Raleway"
+
   .nav
     float right
     padding 10px 0 5px
     font-family Athelas, STHeiti, "Microsoft Yahei", serif
     font-size 0
-  .nav-link
+  .nav_link
     position relative
     display inline-block
     width 100px
@@ -63,26 +64,66 @@
 
 @media (max-width: 767px)
   .header
-    padding 10px
-    height 60px
-    .nav
-      display none
+    display none
+
+  .header-mobile
+    z-index 9
+    position relative
+    display block
+    -webkit-box-shadow 0 3px 3px #ccc
+    -moz-box-shadow: 0 3px 3px #ccc
+    box-shadow 0 3px 3px #ccc
+    border-bottom 1px solid #ccc
+    height 50px
+    text-align center
+
+  .logo
+    height 50px
+
+  .logo_link
+    height 50px
+    line-height 50px
+    font-size 32px
 
   .navbar-toggle
+    position relative
     float left
-    display block
     border none
-    padding 4px 2px
-    width 40px
-    height 30px
+    padding 18px 10px
+    width 50px
+    height 50px
     background none
+    -webkit-transition: transform 0.3s
+    -moz-transition: transform 0.3s
+    -ms-transition: transform 0.3s
+    -o-transition: transform 0.3s
+    transition: transform 0.3s
+    &:hover
+      cursor pointer
+
+  .navbar-toggle.active
+    -webkit-transform: rotate(90deg)
+    -moz-transform: rotate(90deg)
+    -ms-transform: rotate(90deg)
+    -o-transform: rotate(90deg)
+    transform: rotate(90deg)
 
   .icon-bar
     display block
-    width 36px
+    width 30px
     height 1px
     background $color-theme
+    & + .icon-bar
+      margin-top 12px
 
-  & + .icon-bar
-    margin-top 14px
+  .nav
+    position absolute
+    top 50px
+    left 0
+    width 100%
+    background: #fff
 
+  .nav_link
+    display block
+    height 36px
+    line-height 36px
