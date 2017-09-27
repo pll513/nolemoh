@@ -23,14 +23,15 @@
         </nav>
     </header>
     <header class="header-mobile">
-        <button class="navbar-toggle" id="navbar-toggle">
+        <div class="pa top0 left0 w h"></div>
+        <button class="navbar-toggle pa top0 left0" id="navbar-toggle">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
         <div class="logo">
             <a class="logo_link" href="/">NOLEMOH</a>
         </div>
-        <nav class="nav none" id="mobile-nav">
+        <nav class="nav" id="mobile-nav">
             {% for name, path in theme.nav %}
                 <a class="nav_link" href="{{ url_for(path) }}">
                     {% set itemName = __('nav.' + name.toLowerCase()) %}
@@ -43,4 +44,5 @@
             {% endfor %}
         </nav>
     </header>
+
 {% endmacro %}

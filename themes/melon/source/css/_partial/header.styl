@@ -1,8 +1,19 @@
 @import "../_variables.styl"
 
+$height-nav-link = 40px
+
 .logo_link
   color $color-theme
   font-family "Raleway", serif
+
+.nav
+  color #555
+  text-align center
+  vertical-align middle
+  font-family Athelas, STHeiti, "Microsoft Yahei", serif
+
+.header-mobile
+  display none
 
 .header
   padding 24px 0
@@ -18,7 +29,7 @@
   .nav
     float right
     padding 10px 0 5px
-    font-family Athelas, STHeiti, "Microsoft Yahei", serif
+
     font-size 0
   .nav_link
     position relative
@@ -27,9 +38,6 @@
     height 40px
     line-height 40px
     padding 0
-    text-align center
-    vertical-align middle
-    color #555
     font-size 18px
     &:before
       position absolute
@@ -70,14 +78,18 @@
     z-index 9
     position relative
     display block
-    -webkit-box-shadow 0 3px 3px #ccc
-    -moz-box-shadow: 0 3px 3px #ccc
-    box-shadow 0 3px 3px #ccc
-    border-bottom 1px solid #ccc
     height 50px
     text-align center
 
+    .pa.w.h
+      z-index -1
+      -webkit-box-shadow 0 2px 2px #ccc
+      -moz-box-shadow 0 2px 2px #ccc
+      box-shadow 0 2px 2px #ccc
+      border-bottom 1px solid #ccc
+
   .logo
+    z-index 1
     height 50px
 
   .logo_link
@@ -86,27 +98,25 @@
     font-size 32px
 
   .navbar-toggle
-    position relative
-    float left
     border none
     padding 18px 10px
     width 50px
     height 50px
     background none
-    -webkit-transition: transform 0.3s
-    -moz-transition: transform 0.3s
-    -ms-transition: transform 0.3s
-    -o-transition: transform 0.3s
-    transition: transform 0.3s
+    -webkit-transition transform 0.3s
+    -moz-transition transform 0.3s
+    -ms-transition transform 0.3s
+    -o-transition transform 0.3s
+    transition transform 0.3s
     &:hover
       cursor pointer
 
   .navbar-toggle.active
-    -webkit-transform: rotate(90deg)
-    -moz-transform: rotate(90deg)
-    -ms-transform: rotate(90deg)
-    -o-transform: rotate(90deg)
-    transform: rotate(90deg)
+    -webkit-transform rotate(90deg)
+    -moz-transform rotate(90deg)
+    -ms-transform rotate(90deg)
+    -o-transform rotate(90deg)
+    transform rotate(90deg)
 
   .icon-bar
     display block
@@ -117,13 +127,25 @@
       margin-top 12px
 
   .nav
+    z-index -2
     position absolute
     top 50px
     left 0
     width 100%
+    height 0
+    overflow hidden
     background: #fff
+    -webkit-transition height 0.3s
+    -moz-transition height 0.3s
+    -ms-transition height 0.3s
+    -o-transition height 0.3s
+    transition height 0.3s
+
+  .nav.active
+    height $height-nav-link * 3
 
   .nav_link
     display block
-    height 36px
-    line-height 36px
+    height 40px
+    line-height 40px
+    border-bottom 1px solid #eee
